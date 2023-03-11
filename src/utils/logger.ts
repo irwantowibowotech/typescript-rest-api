@@ -1,0 +1,20 @@
+import pino from 'pino'
+import pretty from 'pino-pretty'
+
+const levels = {
+  http: 10,
+  debug: 20,
+  info: 30,
+  warn: 40,
+  error: 50,
+  fatal: 60
+}
+
+export const logger = pino(
+  {
+    customLevels: levels, // our defined levels
+    useOnlyCustomLevels: true,
+    level: 'http'
+  },
+  pretty()
+)

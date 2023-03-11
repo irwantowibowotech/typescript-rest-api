@@ -1,4 +1,5 @@
-import { Router, Request, Response } from 'express'
+import { Router, Request, Response, NextFunction } from 'express'
+import { logger } from '../utils/logger'
 
 const ProductRouter: Router = Router()
 
@@ -25,6 +26,14 @@ ProductRouter.get('/', (req: Request, res: Response) => {
         ]
       }
     ]
+  })
+})
+
+ProductRouter.post('/', (req: Request, res: Response, next: NextFunction) => {
+  logger.info('Success add new product')
+  res.status(201).send({
+    message: 'Berhasil menambahkan data baru',
+    data: req.body
   })
 })
 
