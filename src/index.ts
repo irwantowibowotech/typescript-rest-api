@@ -1,13 +1,10 @@
-import express, { Application, Request, Response } from 'express'
+import express, { Application } from 'express'
+import { routes } from './routes'
 
 const app: Application = express()
 const port: number = 4000
 
-app.use('/', (req: Request, res: Response) => {
-  return res.status(200).json({
-    message: 'Berhasil mengakses routing home'
-  })
-})
+routes(app)
 
 app.listen(port, () => {
   console.log('Server berjalan di port', port)
