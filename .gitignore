@@ -10,4 +10,4 @@ node_modules
 
 #misc
 DS_Store
-.package-locak.json
+.package-lock.json

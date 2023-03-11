@@ -1,9 +1,9 @@
-import express, { Application, Request, Response, NextFunction } from 'express'
+import express, { Application, Request, Response } from 'express'
 
 const app: Application = express()
 const port: number = 4000
 
-app.use('/', (req: Request, res: Response, next: NextFunction) => {
+app.use('/', (req: Request, res: Response) => {
   return res.status(200).json({
     message: 'Berhasil mengakses routing home'
   })
